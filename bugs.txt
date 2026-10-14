@@ -1,0 +1,17 @@
+CSS:
+1> background color didnt have a dash between it so the color didnt function
+2> in #box its position wasnt specified and it needs to be so that a code in js works
+HTML:
+nothing wrong
+JS:
+3> define counter using let or else it will cause problems 
+4> interval is used so we need to define interval
+5> the attribute had name instea dof nameInput so it didnt work
+6> add a clear interval at the beginning so that each time the interval restarts from zero rather than where it left off
+7> what changes color was not specified so we have to use background, 
+   we need a dot before style, 
+   style was mistyped as styel
+8> box was written as boxx which misspells id
+9> counter==10 is not the correct way to use conditions
+   (changed from 10 to 150 to make the range greater)
+10> added an interval with the number of ms specified or else it wont work

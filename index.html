@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buggy Example</title>
+    <style>
+        body{ 
+            background-color: lightblue; /*Didnt have a dash*/
+        }
+        #box{
+            position: relative; /*this is added so that style.left work*/
+            width: 100px;
+            height: 100px;
+            background: red;
+        }
+    </style> 
+</head>
+<body>
+    <h1>Bug Practice</h1>
+    <input id="nameInput" type="text">
+    <button onclick="start()">Start</button>
+    <div id="box"></div>
+    <script>
+        let counter=0; //added a let to define the variable
+        let interval; //define what the interval is
+        function start(){
+            let input=document.getElementById("nameInput"); //the attribute has name without the input
+            console.log(input.value);
+            counter=0;
+            clearInterval(interval); //added this so that it doesnt lag or have anything undealt with before running
+            interval=setInterval(function(){
+                counter++;
+                document.body.style.backgroundColor="yellow";//style was written at styel without a dot before it and you have to specify what changes color
+                let box= document.getElementById("box"); //box, it was double x
+                box.style.left=counter+"px";
+                if (counter>=150){
+                    clearInterval(interval);
+                } //the correct way to use if condition
+            }, 100); //added an interval of 100ms or else it wont work
+        }
+    </script>
+</body>
+</html>
